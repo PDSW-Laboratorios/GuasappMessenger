@@ -56,7 +56,7 @@ public class GuasappProgramLauncher {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                MessageSender ms=new IPV4ComplexMessageSender();
+                MessageSender ms = new ProxySafeSender(new IPV4ComplexMessageSender());
                 CommGUI gui=new CommGUI(ms);
                 gui.setVisible(true);
             }
